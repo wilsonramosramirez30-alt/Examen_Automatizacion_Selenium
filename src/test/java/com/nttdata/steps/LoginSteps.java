@@ -22,10 +22,7 @@ public class LoginSteps {
     public LoginSteps(WebDriver driver){
         this.driver = driver;
     }
-    /**
-     * Escribir el usuario
-     * @param user el usuario
-     */
+
     public void typeUser(String user){
         WebElement userInputElement = driver.findElement(LoginPage.userInput);
         userInputElement.sendKeys(user);
@@ -36,17 +33,12 @@ public class LoginSteps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPage.loginButton));
     }
 
-    /**
-     * Escribir el password
-     * @param password el password del usuario
-     */
+
     public void typePassword(String password){
         this.driver.findElement(LoginPage.passInput).sendKeys(password);
     }
 
-    /**
-     * Hacer click en el botón login
-     */
+
     public void login(){
         this.driver.findElement(LoginPage.loginButton).click();
     }
@@ -58,4 +50,6 @@ public class LoginSteps {
         esperaImplicita();
         login();
     }
+
+
 }
